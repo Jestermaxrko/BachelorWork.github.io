@@ -26,6 +26,11 @@ img:hover{
 	cursor: pointer;
 }
 
+.lake:hover{
+	opacity: 1;
+	cursor: inherit;
+}
+
 #all_water{
 	height: 200px;
 	padding-top: 50px;
@@ -60,6 +65,6 @@ img:hover{
 	display: block;
 }
 
-span{
+.game span{
 	font-weight: bold;
 }

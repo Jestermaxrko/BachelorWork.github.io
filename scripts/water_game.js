@@ -34,6 +34,7 @@ function rightToOut(){
 	five_weight=0;
 	updateLiters();
 	left_transfer_bar.style.display="none";
+	top_controls.style.visibility="visible";
 }
 
 function threeSelected(){
@@ -62,6 +63,7 @@ function leftToOut(){
 	three_weight=0;
 	updateLiters();
 	right_transfer_bar.style.display="none";
+	top_controls.style.visibility="visible";
 }
 
 function toLeft(){
@@ -85,4 +87,12 @@ function updateLiters(){
 	three_liters_div.innerHTML = three_weight+" liters";
 	five_liters_div.innerHTML= five_weight+" liters"; 
 	are_ways_selected=false;
+
+	if(five_weight==4){
+		parent.PassQuestion(true,1);
+	}
+}
+
+function passQuestion(){
+	parent.PassQuestion(false,1);
 }

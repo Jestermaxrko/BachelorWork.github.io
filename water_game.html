@@ -3,15 +3,23 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="styles/water_game.css">
+	<link rel="stylesheet" type="text/css" href="styles/header.css">
 	<script defer type="text/javascript" src="scripts/water_game.js"></script>
 </head>
 <body>
+
+
+	<div class="condition">
+			<span>У вас є дві банки: перша - 5-ти літрова, друга - 3-ох літрова. Потрібно в 5-ти літрову набрати чотири літри води.Щоб набрати з джрела воду у банку використовуйте стрілки як знаходять під джерелом.Для переливання між бутилками потрібно вибрати бутилку,а потім відповідну стрілку.Щоб вилити воду з бутилки виберіть потрібну бутилку та стрілку яка вказазую в сторону джерела</span>
+			<a class="pass_btn" onclick="passQuestion()">Pass</a>
+
+	</div>
 
 	<div class="game" id="game">
 		
 		<div id="all_water">
 
-			<img src="images/lake.png" height="200px" >
+			<img src="images/lake.png" class="lake" height="200px" >
 
 		</div>
 
