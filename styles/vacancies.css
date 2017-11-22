@@ -1,0 +1,162 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+@import url('https://fonts.googleapis.com/css?family=Signika');
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+body{
+	background-image: url(../images/back.png);
+}
+.container {
+	width: 70%;
+	margin: auto;
+	background-color: white;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+
+.fields{
+	padding: 0 10px;
+	
+	margin: 0;
+}
+
+
+header{
+	padding-bottom: 10px;
+	background-color: #3971cc;
+	height: 100px;
+	position: relative;
+	background-image: url(https://ak5.picdn.net/shutterstock/videos/4363835/thumb/11.jpg);
+	background-size: cover;
+
+
+}
+
+header h1{
+	margin: 0;
+	padding-left: 20px;
+	color:white;
+	padding-bottom: 5px;
+	margin: 0;
+	font-family: 'Bree Serif', serif;
+}
+
+header p{	
+	margin:0;
+	margin-left: 50px;
+	color: white;
+	font-family: 'Shadows Into Light', cursive;
+}
+
+header span{
+	font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.register_btn{
+	background-color: transparent;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 5px 10px;
+	color:green;
+	border:2px solid #2edd8e;
+	border-radius:5px;
+	float: right;
+	color: #2edd8e;
+	text-transform: uppercase;
+	margin-top: 5px;
+}
+
+
+
+
+header img{
+	padding: 10px;
+	padding-right: 0px;
+	padding-bottom: 100px;  
+
+}
+
+header span{
+	color: white;
+}
+
+.register{
+	float:right;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.field{
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	
+
+}
+
+.field p{
+	font-family: 'Exo 2', sans-serif;
+}
+
+.description{
+	padding: 0;
+	margin:0;
+	text-align: justify;
+}
+
+.display_inline{
+	display: inline-block;
+}
+
+
+img{
+	width: 100px;
+	vertical-align: top;
+}
+
+.info{
+	width: 80%;
+}
+
+.link{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.test_id{
+	color:red;
+}
+
+.start_btn{
+	padding: 5px 10px;
+	border-radius:5px;
+	background-color: transparent;
+	border:2px solid green;
+	color: green;
+	text-decoration: none;
+	margin-top: 4px;
+	display: block;
+	width: 10%;
+	text-align: center;
+}
+
+.field_name{
+	padding: 0;
+	padding-left: 10px;
+	padding-top: 5px;
+	margin: 0;
+	margin-bottom: 5px;
+	font-family: 'Signika', sans-serif;
+	color: #2d2d2d;
+}
+
+
+a:hover{
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}

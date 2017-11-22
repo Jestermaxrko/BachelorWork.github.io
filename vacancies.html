@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styles/vacancies.css">
+
+
+</head>
+<body>
+
+	<div class="container">
+	
+
+		<header >	
+					<h1>Vacancies</h1>
+					<p>We are waiting for you</p>
+					<div class="display_inline register">
+						<span> You must register for passing tests</span><br>
+						<a href="register.html" target="_blank" class="register_btn"> Register</a>
+					</div>
+		</header>
+
+		<div class="main">
+				
+				
+				<div class="fields">
+					
+					<div class="field">
+						<h2 class="field_name">FrontEnd Developer</h2>
+						<img src="images/pwg.png" class="display_inline" width="100px" height="100px">
+						<div class="info display_inline">
+							<p class="description">
+							Логічний тест для напрямку JavaScript.Для початку небзідно пройти загальний тест для встановлення інтелектуальних здібностей.
+							Після проходження тесту з вами звяжуться наші працівники для перевірки рівня вашої технічної кваліфікації яка проходить у вигляді тестування.Після успішного проходження двох видів тестувать вас чекає НР співбесіда.
+							</p>
+							
+							<div class="link">
+								
+								<a href="testpage.html" class="start_btn" target="_blank" id="test1" testname="FrontEnd Developer" onclick="saveTestUid(this)">Start</a>
+
+
+							</div>
+						</div>
+					</div>
+
+					<div class="field">
+						<h2 class="field_name">FrontEnd Developer</h2>
+						<img src="images/pwg.png" class="display_inline" width="100px" height="100px">
+						<div class="info display_inline">
+							<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec commodo felis. Aenean nec diam a purus volutpat scelerisque in bibendum nulla. In ligula justo, venenatis vitae euismod ac, egestas a nunc. Proin elementum quam sem, a convallis neque fermentum non. Suspendisse non felis nec orci congue tempus eget nec ipsum. Fusce euismod, erat ut vehicula dapibus, tellus arcu viverra nunc, mattis suscipit justo quam quis ipsum. Phasellus ut augue lacus. Praesent et porta mauris. Sed sed sodales est. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+							
+							<div class="link">
+								
+								<a href="testpage.html" class="start_btn" target="_blank" id="12345" onclick="saveTestUid(this)">Start</a>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function saveTestUid(elem){
+			localStorage.setItem("currentTestFieldName",elem.getAttribute("testname"));
+			localStorage.setItem("testUid",elem.id);
+			console.log(elem.id);
+		}
+
+	</script>
+</body>
+</html>

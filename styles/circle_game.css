@@ -1,0 +1,87 @@
+
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
+.game{
+	width: 360px;
+	height:349px;
+	background-image: url("../images/circle.png");
+	position: relative;
+	margin:auto;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+input{
+	font-family: 'Saira Semi Condensed', sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	border-radius: 50%;
+	text-align:center;
+	border:none;
+	border:3px solid #84bab2;
+	outline:0;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+}
+
+input:focus{
+	border:3px solid  green;
+}
+
+.central_line{
+		left:154px;
+}
+
+#center_top{
+	top: 6px;	
+}
+
+#center_center{
+	top:75px;
+	left:156px;
+}
+
+#center_bottom{
+	top: 160px;
+	left:156px;
+
+}
+
+#left_bottom{
+	top:253px;
+	left: 37px;
+}
+
+#left_top{
+	top:212px;
+	left: 86px;
+}
+
+#right_bottom{
+	top:247px;
+	left: 284px;
+}
+
+#right_top{
+	top:209px;
+	left: 228px;
+}
+
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input::placeholder{
+	font-weight: bold;
+}
+
+.tries {
+	font-family: 'Saira Semi Condensed', sans-serif;
+	text-align: center;
+}

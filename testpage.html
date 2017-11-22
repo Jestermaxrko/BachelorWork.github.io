@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styles/testpage.css">
+	<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+	<script src="scripts/jquery-3.2.1.min.js"></script>
+	<script defer type="text/javascript" src="scripts/testpage.js"></script>
+</head>
+<body>
+
+	<div class="container">
+
+		<div id="start_page" >
+			
+			<div class="login_panel">
+					
+
+
+				<h2 class="field_name" id="field_name"> Javascript </h2>
+				<form>
+					<input type="text" name="mail" id="mail" placeholder="e-mail" value="jestermaxrko@gmail.com">
+					<input type="text" name="password" id="pass" placeholder="password" value="max450384rko">
+					<input type="text" name="testUid" id="testUid" placeholder="testUid" value="id">
+				</form>
+						
+				<a class="login_btn" onclick="signIn(mail.value,pass.value)">Login</a>
+				 <span> Doesnt have account ?</span> <a href="register.html" target="_blank" class="register_btn">Register</a>
+	
+
+			</div>
+
+		</div>
+
+		<div class="main" id="main" style="display: none">
+			
+			<div class="test_panel" id="test_panel" >
+
+
+				<div class="test_area" id="test_area" style="display: none">
+					
+
+					
+					<iframe src="table_number.html" id="frame" marginwidth="0"></iframe>
+					
+
+				</div>
+
+				<div id="start_test_page">
+					
+					<div class="rules">
+						<h2> Правила</h2>
+
+						<ul>
+							<li>У вас є ОДНА сроба для проходження тесту.</li>
+							<li>Якщо ви відкриєте нову вкладку,вікно або сторонню програму тест буде вважатись проваленим а всі результатити анульованими.</li>
+							<li>Якщо обновите сторінку після початку тесту - тест буде вважатись проваленим а всі результатити анульованими</li>
+							<li>Тестові завдання перемикаються автоматично після надання правильної відповіді або після натиснення клавіші "Pass"</li>
+						</ul>
+						<p>Для початку тестування натисніть "Start"	
+						</p>
+					</div>
+
+					<a class="start_btn" onclick="starTest()">Start</a>
+
+				</div>
+
+				<div id=result_page style="display: none">
+					<h2>Your Results</h2>
+					<table id="res_table">
+						<tr>
+							<th>Name</th>
+							<th>Time</th>
+							<th>Tries</th>
+							<th>Right Answer</th>
+						</tr>
+
+					</table>
+
+				</div>
+
+			</div>
+
+			<div class="right_panel" id="right_panel" >
+
+				<div class="show_hide">
+					<a id="show_hide_btn" onclick="ShowHide()"><img id="arrow" src="images/hide.png" height="15px"> </a>
+				</div>
+				
+				<div class="timer_div" id="timer_div">
+						<img src="images/timer.png" width="50px">
+						<span id="time" >00:00:00</span>
+				</div>
+
+				<div class="questions_list">
+					
+					<ul id="list">
+						<li class="active">Початок</li>
+						
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+
+</body>
+</html>

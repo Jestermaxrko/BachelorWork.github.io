@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styles/water_game.css">
+	<script defer type="text/javascript" src="scripts/water_game.js"></script>
+</head>
+<body>
+
+	<div class="game" id="game">
+		
+		<div id="all_water">
+
+			<img src="images/lake.png" height="200px" >
+
+		</div>
+
+		<div id="top_controls">
+			
+			<a href="#" id="to_left" onclick="toLeft()"><img src="images/in.png" ></a>
+			<a href="#" id="to_right"  onclick="toRight()"><img src="images/in2.png" ></a>
+
+
+		</div>
+		
+		<div id="bottles">
+			<div id="fiveliters" ">
+
+				<img src="images/bottle_five.png" width="100px" height="100px" onclick="fiveSelected()">
+				<span id="five_title" style="display: block">0 liters</span>
+			</div>
+
+			<div id="center_controls">
+				
+				<div id="left_to_right" style="display: none;">
+					<a href="#" class="transfer_btn" onclick="rightToOut()"><img src="images/out.png"></a>
+					<a href="#" class="transfer_btn" onclick="rightToLeft()"><img src="images/right_arrow.png"></a>
+					<a href="#" class="transfer_btn" onclick="cancelTransfer()">Cancel</a>
+				</div>
+
+				<div id="right_to_left" style="display: none;">
+					<a href="#" class="transfer_btn" onclick="leftToOut()"><img src="images/out2.png" ></a>
+					<a href="#" class="transfer_btn" onclick="leftToRight()"><img src="images/right_arrow.png" class="revert"></a>
+					<a href="#" class="transfer_btn" onclick="cancelTransfer()">Cancel</a>
+				</div>
+
+			</div>
+			<div id="threeliters">
+				<img src="images/bottle_three.png" width="100px" height="100px" onclick="threeSelected()">
+				<span id="three_title" style="display: block">0 liters</span>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

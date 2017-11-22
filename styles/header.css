@@ -1,0 +1,58 @@
+
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
+
+
+body{
+	background-image: url("../images/back.png");
+	margin-top: 0;
+}
+
+.pass_btn{
+	background-color: rgba(255,0,0,.5);
+	padding: 5px 10px;
+	text-decoration: none;
+	color: white;
+	border-radius: 5px;
+	margin-top: 5px;
+	display: inline-block;
+	float:right;
+	width: 50px;
+	border:none;
+	text-align: center;
+}
+
+.condition{
+	font-family: 'Exo 2', sans-serif;
+	background-color: white;
+	text-align: justify;
+	padding-bottom: 20px;
+	width: 100%;
+}
+
+.check_div{
+	text-align: center;
+}
+
+.pass_btn:hover{
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+}
+
+
+.check{	
+	font-family: 'Saira Semi Condensed', sans-serif;
+	padding: 5px 10px;
+	background-color: transparent;
+	border:2px solid #84bab2;
+	border-radius: 10px;
+}
+
+.check:hover{
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+}
+
+span {
+	text-align: center;
+}

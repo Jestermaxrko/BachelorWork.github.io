@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styles/circle_game.css">
+	<link rel="stylesheet" type="text/css" href="styles/header.css">
+	<script defer type="text/javascript" src="scripts/circle_game.js"></script>
+</head>
+<body>
+
+	<div class="condition">
+			<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet dolor lacus. Praesent eu enim odio. Nunc scelerisque dui dolor. Mauris euismod malesuada dui, sed ornare dolor pulvinar eleifend. Nullam leo dui, porttitor eu pharetra ut, ullamcorper sed orci. Cras vulputate, justo ac fringilla commodo, mi nibh viverra nibh, iaculis efficitur dolor mi vitae dolor. Quisque at sodales lacus. Integer luctus purus eu felis mattis posuere.</span>
+			<a class="pass_btn" onclick="passQuestion()">Pass</a>
+
+	</div>
+
+	<div class="tries"><span id="try">Tries : 0</span></div>
+
+	<div class="game" id="game">
+		<input type="number" name="" id="center_top" class="central_line outer_line" placeholder="?" onpaste="return false;">
+		<input type="number" name="" id="center_center" class="central_line inner_line" placeholder="?" onpaste="return false;">
+		<input type="number" name="" id="center_bottom" class="central_line left_line right_line" placeholder="?" onpaste="return false;">
+		<input type="number" name="" id="left_top" class="left_line inner_line" placeholder="?" onpaste="return false;">
+		<input type="number" name="" id="left_bottom" class="left_line outer_line" placeholder="?" onpaste="return false;">
+		<input type="number" name="" id="right_top" class="right_line inner_line" placeholder="?" onpaste="return false;">
+		<input type="number" name="" id="right_bottom" class="right_line outer_line" placeholder="?" onpaste="return false;">
+	</div>
+	<div class="check_div">
+		
+		<a  onclick="checkAnswer()" class="check">Check</a>
+
+	</div>
+</body>
+</html>

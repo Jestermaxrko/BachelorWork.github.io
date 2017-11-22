@@ -1,0 +1,65 @@
+
+
+.game{
+	width: 100%;
+	margin: auto;
+	background-image: url(../images/backwater.png);
+	background-size: cover;
+}
+
+#bottles {
+	display: flex;
+
+}
+
+
+#top_controls{
+	text-align: center;
+}
+
+#top_controls a{
+
+}
+
+img:hover{
+	opacity: .7;
+	cursor: pointer;
+}
+
+#all_water{
+	height: 200px;
+	padding-top: 50px;
+	text-align: center;
+	
+}
+
+#center_controls{
+	width: 100px;
+}
+
+.revert{
+	transform: rotate(180deg);
+}
+
+#fiveliters{
+	flex: 1;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	
+}
+
+#threeliters{
+	flex: 1;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+}
+
+.transfer_btn{
+	display: block;
+}
+
+span{
+	font-weight: bold;
+}

@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
+
+body{
+	font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+
+#gamefield{
+	margin:auto;
+	margin-top: 0;
+	text-align: center;
+}
+
+table{
+	margin:auto;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+	background-color: white;
+	font-weight: bold;
+	color:rgba(0,0,0,.8);
+
+}
+
+td{
+	border:2px solid #84bab2;
+	padding: 10px;
+	width: 50px;
+	height: 50px;
+	text-align:center; 
+    vertical-align:middle;
+}
+
+
+input{
+	font-family: 'Saira Semi Condensed', sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	color:green;
+	outline: 0;
+	width: 50px;
+	height: 50px;
+	border: none;
+	border-bottom: 2px solid #ccc;
+	text-align: center;
+	outline: 0;
+	background-color: transparent;
+
+}
+
+
+input::-webkit-inner-spin-button{
+	-webkit-appearance: none;
+	margin:0;
+}
+
+input:focus{
+	border-bottom: 2px solid green;
+}
+
+.mistery_cell{
+	padding: 0;
+}
+
+
