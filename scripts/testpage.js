@@ -8,7 +8,7 @@ var li ;
 var quest_time =[];
 var is_show = true;
 var uid;
-
+var all_time=0;
 var q_count=0;
 
 var all_games =[];
@@ -246,16 +246,16 @@ function PassQuestion(answer,tries){
 	li_number++
 	
 
-	var cur_time;
-
 	if(!quest_time.length) {
 		quest_time.push(time);
-		cur_time=time;
-
+		all_time=time;
+		console.log(all_time);
 	}
 	else{
-		quest_time.push(time-quest_time[quest_time.length-1]);
-		cur_time = time-quest_time[quest_time.length-1];
+		console.log(all_time);
+		quest_time.push(time-all_time);
+		//cur_time = time-quest_time[quest_time.length-1];
+		all_time=time;
 	}
 
 	user_answers.push({
@@ -268,6 +268,7 @@ function PassQuestion(answer,tries){
 	if(li_number>li.length-2){
 		document.getElementById("test_area").style.display ="none";
 		li[li.length-1].className="active";
+		clearTimeout(timer);
 		displayResultsPage();
 		writeAllResultToDataBase();
 	}
