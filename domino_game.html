@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styles/domino_game.css">
+	<link rel="stylesheet" type="text/css" href="styles/header.css">
+	<script defer type="text/javascript" src="scripts/domino_game.js"></script>
+</head>
+<body>
+
+	<div class="condition">
+			<span>Поменяйте місцями дві пари фішок так, щоб кількість очок в кожному з трьох вертикальних і трьох горизонтальних рядів стала рівною 15.
+				У вас є лише два ходи.
+				Щоб міняти фішки місцями натисніть на одну з них, а потім на ту з якої необхідно поміняти.Щоб відмінити вибір першої фішки натисніть на неї знову.
+			</span>
+			<a class="pass_btn" onclick="passQuestion()">Pass</a>
+
+	</div>
+
+	<div class="game" id="game">
+		
+
+		<table id=game_table>
+			 <caption><span id="try">Tries : 0</span></caption>
+			<tr>
+				<td><img src="images/domino/3and3.png" class="first_row first_col" onclick="dominoSelected(this)"></td>
+				<td><img src="images/domino/5and0.png" class="first_row second_col" onclick="dominoSelected(this)"></td>
+				<td><img src="images/domino/3and2.png" class="first_row third_col" onclick="dominoSelected(this)"></td>
+			</tr>
+			<tr>
+				<td><img src="images/domino/1and4.png" class="second_row first_col" onclick="dominoSelected(this)"></td>
+				<td><img src="images/domino/1and3.png" class="second_row second_col" onclick="dominoSelected(this)"></td>
+				<td><img src="images/domino/2and2.png" class="second_row third_col" onclick="dominoSelected(this)"></td>
+			</tr>
+			<tr>
+				<td><img src="images/domino/4and2.png" class="third_row first_col" onclick="dominoSelected(this)"></td>
+				<td><img src="images/domino/1and5.png" class="third_row second_col" onclick="dominoSelected(this)"></td>
+				<td><img src="images/domino/0and4.png" class="third_row third_col" onclick="dominoSelected(this)"></td>
+			</tr>
+
+		</table>
+
+		
+
+	</div>
+	<div class="cen">	
+			<a onclick="resetTable()">Reset</a><br>
+			<span id="lose" style="visibility:hidden;">You are run out of moves.Press <strong>Reset</strong> to another try</span>
+	</div>
+	
+
+</body>
+</html>
