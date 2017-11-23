@@ -1,0 +1,53 @@
+
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
+
+body{
+	font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+table{
+	background-color: white;
+	width:100%;
+	margin:auto;
+}
+
+.game{
+	text-align: center;
+	width:50%;
+	margin: auto;
+	margin-top:10px; 
+}
+
+img:hover {
+	opacity: .7;
+	cursor:pointer;
+}
+
+.active{
+	opacity: .7;
+}
+
+a{
+	background-color: #7f7f7f;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: white;
+	border-radius: 5px;
+	margin-top: 5px;
+	display: inline-block;
+	width: 50px;
+	border:none;
+	text-align: center;
+
+}
+
+a:hover{
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+}
+.cen, .tries{
+	text-align: center;
+}
+strong{
+	color: rgba(255,0,0,.5);
+}
