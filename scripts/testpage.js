@@ -22,11 +22,28 @@ initFirebase();
 
 checkSignIn();
 
- window.onbeforeunload = function () {
-        signOut();
+
+
+
+
+window.onbeforeunload = function (e) {
+    e = e || window.event;
+
+    signOut();
+
+    // For IE and Firefox prior to version 4
+    if (e) {
+        e.returnValue = 'If you leave this page test will be failed.Leave ?';
     }
 
-setId();
+    // For Safari
+    return 'If you leave this page test will be failed.Leave ?';
+};
+
+
+
+//setId();
+
 
 
 function setId(){
@@ -38,7 +55,7 @@ function setId(){
 		document.getElementById("field_name").innerHTML = field;
 		document.getElementById("testUid").value=link;
 		localStorage.removeItem("testUid");
-		localStorage.removeItem(currentTestFieldName);
+		localStorage.removeItem("currentTestFieldName");
 		//.value=link;
 	}
 }
@@ -56,14 +73,29 @@ function initFirebase(){
 }
 
 
-function signIn(mail,pass){
+function signIn(mail,pass,recivedTestUid){
+
+	console.log(mail);
 	console.log(pass);
-	firebase.auth().signInWithEmailAndPassword(mail,pass).catch(function(error) {
-  	var errorCode = error.code;
-  	var errorMessage = error.message;
-  	console.log(errorCode);
-  	console.log(errorMessage);
-});
+	console.log(recivedTestUid);
+
+	if(mail && pass && recivedTestUid){
+
+
+
+		firebase.auth().signInWithEmailAndPassword(mail,pass).catch(function(error) {
+		  	var errorCode = error.code;
+		  	var errorMessage = error.message;
+		  	document.getElementById("error_box").style.display="block";
+		  	document.getElementById("error_message").innerHTML="Incorrect login or password";
+		});
+	}
+	else{
+
+		document.getElementById("error_box").style.display="block";
+	  	document.getElementById("error_message").innerHTML="Enter all fields";
+	}
+
 }
 
 function readGames(){
@@ -76,7 +108,7 @@ function readGames(){
 }
 
 function readTest(id){
-	firebase.database().ref("tests/"+id+"").once('value').then(function(snapshot) {
+	firebase.database().ref("tests/"+id+"/games").once('value').then(function(snapshot) {
   	var games_in_test = snapshot.val();
   	console.log(games_in_test);
   	for(var key in games_in_test){
@@ -85,13 +117,16 @@ function readTest(id){
   	if(games_in_test){
   		checkTestPermission();
   	}else {
-  		console.log("Test is missing");
+  		document.getElementById("error_box").style.display="block";
+  		document.getElementById("error_message").innerHTML="Incorect test identifier";
   	}
 });
 
 }
 
 function filterGames(){
+
+	console.log(test_games_names);
 	for(var i=0;i<test_games_names.length;i++){
 		for(var j=0;j<all_games.length;j++){
 			if(test_games_names[i]==all_games[j].name){
@@ -109,7 +144,7 @@ function createUI(){
 
 	for(var i =0;i<current_games.length;i++){
 		var item = document.createElement("li");
-		item.innerHTML=current_games[i].name;
+		item.innerHTML= "Game  " +(i+1);
 		list.appendChild(item);	}
 
 	var last_li = document.createElement("li");
@@ -136,7 +171,7 @@ function checkSignIn(){
     console.log("yesSignIn");
     uid = firebase.auth().currentUser.uid;
     readGames();
-    testUid=document.getElementById("testUid").value;
+    testUid=document.getElementById("tests").value;
     readTest(testUid);
    
   } else {
@@ -172,7 +207,8 @@ function checkTestPermission(){
 				allowPassTest();
 			}
 			else{
-				console.log("second chan");
+				document.getElementById("error_box").style.display="block";
+  				document.getElementById("error_message").innerHTML="You dosent have acces to this test.Please try again later";
 			}
 		}
 	}else allowPassTest();
@@ -271,6 +307,7 @@ function PassQuestion(answer,tries){
 		clearTimeout(timer);
 		displayResultsPage();
 		writeAllResultToDataBase();
+		
 	}
 	else 
 		li[li_number].className="active";
@@ -300,7 +337,7 @@ function displayResultsPage(){
 	document.getElementById("result_page").style.display="";
 	var table = document.getElementById("res_table");
 
-	recreateTime();
+	//recreateTime();
 
 	for(var i=0;i<user_answers.length;i++){
 		var row = table.insertRow(i+1);
@@ -308,7 +345,10 @@ function displayResultsPage(){
 		for(var key in user_answers[i]){
 			var cell= row.insertCell(j++);
 			if(key!="answer")
-				cell.innerHTML=user_answers[i][key];
+				if(key=="time"){
+					cell.innerHTML=getTimeString(user_answers[i][key]);
+				}else
+					cell.innerHTML=user_answers[i][key];
 			else{
 				console.log("answer = " + user_answers[i][key]);
 				if(user_answers[i][key]==false)
@@ -336,7 +376,18 @@ function displayResultsPage(){
 	row.insertCell(2).innerHTML = sum_tries;
 	row.insertCell(3).innerHTML = sum_right_answers;
 
-	
+	writeSummary(time,sum_tries,sum_right_answers);	
+}
+
+
+function writeSummary(time,tries,right){
+
+firebase.database().ref("users/"+uid+"/tests/"+testUid).set({
+		time:time,
+		tries:tries,
+		right:right,
+		wasStarted:false
+	});
 }
 
 
