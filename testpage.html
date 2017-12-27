@@ -15,19 +15,24 @@
 			
 			<div class="login_panel">
 					
-
-
 				<h2 class="field_name" id="field_name"> Javascript </h2>
 				<form>
 					<input type="text" name="mail" id="mail" placeholder="e-mail" value="jestermaxrko@gmail.com">
 					<input type="text" name="password" id="pass" placeholder="password" value="max450384rko">
-					<input type="text" name="testUid" id="testUid" placeholder="testUid" value="id">
+					<input type="text" name="testUid" id="tests" placeholder="testUid" value="id">
 				</form>
 						
-				<a class="login_btn" onclick="signIn(mail.value,pass.value)">Login</a>
+				<a class="login_btn" onclick="signIn(mail.value,pass.value,tests.value)">Login</a>
 				 <span> Doesnt have account ?</span> <a href="register.html" target="_blank" class="register_btn">Register</a>
 	
+			</div>
 
+			<div class="error_box" id="error_box" style="display: none;">
+
+				<div>
+					<img src="images/warning.png" id="warn_image" width="50px" height="50px">
+					<span id="error_message"></span>
+				</div>
 			</div>
 
 		</div>
