@@ -272,7 +272,8 @@ function starTest(){
 	document.getElementById("test_area").style.display="block";
 	li[li_number].classList.remove("active");
 	li[++li_number].className="active";
-	document.getElementById("frame").src = current_games[0].name+".html";
+	//document.getElementById("frame").src = current_games[0].name+".html";
+	$( "#irame" ).load( current_games[0].name+".html" );
 	timer = setInterval(updateTimer,1000);
 }
 
@@ -313,7 +314,9 @@ function PassQuestion(answer,tries){
 		li[li_number].className="active";
 
 	if(current_game_index<current_games.length){
-		document.getElementById("frame").src = current_games[current_game_index].name+".html";
+		//document.getElementById("frame").src = current_games[current_game_index].name+".html";
+
+		$( "#irame" ).load( current_games[current_game_index].name+".html" );
 		console.log(current_games[current_game_index].name);
 	}
 	console.log(user_answers[current_game_index-1]);
