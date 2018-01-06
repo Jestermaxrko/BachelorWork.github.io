@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styles/admin_page.css">
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<script src="scripts/jquery-3.2.1.min.js"></script>
+	<script defer type="text/javascript" src="scripts/admin_page.js"></script>
+
+</head>
+
+<body>
+
+	<a href="#container" style="float: left; bottom: 0; position: fixed;">To Top</a>
+
+
+	<div class="login_page" id="login_page" style="display: none;">
+		
+		<form>	
+
+			<img src="images/settings_big.png">
+			<input type="text" name="username" id="username" placeholder="Username">
+
+			<input type="password" name="pass" id="pass" placeholder="Password">
+
+			<a onclick="SignIn(username.value,pass.value)">Увійти</a>
+		</form>
+
+	</div>
+
+
+	<div class="container " id="container" style="display: none;">
+		<header>
+		<nav>
+			
+			<ul id="nav_list">
+				<li><a onclick="loadHomePage()"><img src="images/setings.png" height="70px"></a></li>
+				<li><a onclick="loadResults()">Результати</a></li>
+				<li><a onclick="loadCreator()">Створити</a></li>
+				<li style="float: right;"><a onclick="signOut()">Вийти</a></li>
+			</ul>
+
+		</nav>
+
+	</header>
+	
+
+
+	<div id="home_page">
+		
+		<div class="image">
+			<p>Це сторінка призначена для адміністратора.<br>Вона надає можливості перегляду результатів тестувань та створеннях нових .</p>
+			<div class="btn_div">
+				
+				<a onclick="loadResults()">Переглянути</a>
+				<a onclick="loadCreator()">Створити</a>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="results_page" id="results_page" style="display: none;">
+		
+		
+		<div class="main_page">
+		
+			<div id="test_page">
+				
+				
+				<ul id="test_list">
+					
+				</ul>
+
+			</div>
+
+			<div id="user_page">
+				
+				<div id="sortpanel" style="display: none;">
+					
+					<h2 class="display_inline ">Рейтинг</h2>
+
+					<div class="display_inline float_right sort_">
+						<span class="display_inline">Sort by:</span> 
+						<select   class="display_inline" id="sort_select" onchange="sortResults(this.value)">
+						 	<option value="1">Очки</option>
+						 	<option value="time">Час</option>
+						 	<option value="tries">Спроби</option>
+						</select>
+						<a class="display_inline display_btn">
+							<img src="images/full.png" id="screen_img" width="20px" onclick="changeTableMode()"></img> 
+						</a>
+					</div>
+				</div>
+
+
+				<div id="message">
+					<h1>Виберіть тест щоб побачити результати</h1>
+				</div>
+
+
+				<table id="user_results" class="user_results">
+
+				</table>
+
+			</div>
+		</div>
+
+	</div>
+
+	<div class="new_test_page" id="new_test_page" style="display: none;">
+		
+		<div class="create_page">
+			
+
+			<div id="new_test">
+				<input type="text" id="new_test_name" placeholder="Test name"> 
+				<a class="clear_name" onclick="clearName()"></a>
+
+
+
+				<h3 id="games_count">Ігри (0)</h3>
+				<ul id="current_games">
+					
+				</ul>
+
+				<a id="save_test_btn" style="display: none;" onclick="createNewTestObject(new_test_name.value)">Зберегти</a>
+
+
+			</div>
+
+			<div id=creator> 
+
+				<h3>Доступні ігри</h3>
+				<ul id="games_list">
+					
+				</ul>
+
+				<h3>Random create</h3>
+
+				<input type="number" name="">
+
+				<div id="result"> </div>
+
+			</div>
+
+		</div>
+	</div>
+
+	</div>
+
+
+
+
+	
+
+</body>
+</html>
