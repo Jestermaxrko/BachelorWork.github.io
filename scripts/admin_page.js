@@ -11,7 +11,7 @@ var table_full_screen = false;
 initFirebase();
 //SignIn();
 
-$( "#result" ).load( "../testpage.html" );
+$( "#result" ).load( "testpage.html" );
 
 
 checkSignIn();
