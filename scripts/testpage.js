@@ -445,3 +445,8 @@ function test(tries){
 	console.log(tries);
 }
 
+
+function resizeIframe(obj) {
+	console.log("yes Resize");
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
