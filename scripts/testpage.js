@@ -273,7 +273,11 @@ function starTest(){
 	li[li_number].classList.remove("active");
 	li[++li_number].className="active";
 	//document.getElementById("frame").src = current_games[0].name+".html";
-	$( "#iframe" ).load(current_games[0].name+".html" );
+	//$( "#iframe" ).load(current_games[0].name+".html" );
+
+	var frame = $('#frame')[0];  
+	frame.contentWindow.location.replace(current_games[current_game_index].name+".html");
+
 	timer = setInterval(updateTimer,1000);
 }
 
@@ -316,7 +320,11 @@ function PassQuestion(answer,tries){
 	if(current_game_index<current_games.length){
 		//document.getElementById("frame").src = current_games[current_game_index].name+".html";
 
-		$( "#iframe" ).load( current_games[current_game_index].name+".html" );
+
+		var frame = $('#frame')[0];  
+		frame.contentWindow.location.replace(current_games[current_game_index].name+".html");
+
+		//$( "#iframe" ).load( current_games[current_game_index].name+".html" );
 		console.log(current_games[current_game_index].name);
 	}
 	console.log(user_answers[current_game_index-1]);
