@@ -1,0 +1,16 @@
+table td{
+	width: 50px;
+	height:50px; 
+	background-color: red;
+
+}
+
+.gr{
+	background-color: green;
+}
+
+tr{
+	transform: rotate(-45deg);
+	 transform: translateX(10px);
+	 
+}

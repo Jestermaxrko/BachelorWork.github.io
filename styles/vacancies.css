@@ -144,6 +144,7 @@ img{
 	display: block;
 	width: 10%;
 	text-align: center;
+	box-sizing: border-box;
 }
 
 .field_name{
@@ -160,3 +161,33 @@ img{
 a:hover{
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+
+
+@media only screen and (max-width: 900px){
+
+
+	.container{
+		width: 100%;
+	}
+} 
+
+
+@media only screen and (max-width: 600px){
+
+
+	.container,.info,.start_btn{
+		width: 100%;
+	}
+
+	.field img,.register span {
+		display: none;
+	}
+
+	.field_name {
+		margin-left:  0;
+		padding-left: 0;
+	}
+
+
+
+} 

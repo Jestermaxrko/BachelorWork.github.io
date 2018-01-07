@@ -5,8 +5,6 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow');
 body{
 	background-image: url(../images/back.png);
-
-
 }
 
 
@@ -58,18 +56,19 @@ header h1{
 
 .pair{
 	margin-bottom: 5px;
-	
+
 }
 
 label{
 	display: inline-block;
-	vertical-align: middle;
+	
 	width: 30%;
 	line-height: 34px;
 	background-color: #ccc;
 	border-bottom-left-radius: 5px;
 	border-top-left-radius: 5px;
 	height: 34px;
+	vertical-align: middle;
 	padding-left: 5px;
 	box-sizing: border-box;
 	font-family: 'Lato', sans-serif;
@@ -86,6 +85,7 @@ input{
 	border-left:2px solid white;
 	box-sizing: border-box;
 	padding-left: 5px;
+	vertical-align: bottom;
 	font-weight: bold;
 	font-family: 'Source Sans Pro', sans-serif;
 
@@ -113,3 +113,26 @@ a:hover{
 	/*box-shadow: 0 0 10px rgba(255,255,255,0.5);*/
 	 box-shadow:  inset 0 0 5px #000000;
 }
+
+
+
+@media only screen and (max-width: 900px){
+
+
+	.container{
+		display: block;
+		width: 80%;
+	}
+
+} 
+
+
+@media only screen and (max-width: 500px){
+
+
+	.container , .error_box{
+		display: block;
+		width: 100%;
+	}
+
+} 

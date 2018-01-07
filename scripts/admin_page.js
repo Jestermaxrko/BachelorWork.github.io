@@ -7,11 +7,13 @@ var opened_row_indexes = [];
 var sort_conditon;
 var current_games = [];
 var table_full_screen = false;
+var is_preview_open = false;
+var all_games =[]; 
 
 initFirebase();
 //SignIn();
 
-$( "#result" ).load( "testpage.html" );
+//$( "#result" ).load( "testpage.html" );
 
 
 checkSignIn();
@@ -95,9 +97,10 @@ firebase.database().ref('/tests/').once('value').then(function(snapshot) {
 
 function readAllGames() {
 	firebase.database().ref('/games/').once('value').then(function(snapshot) {
-  	var games_tmp = snapshot.val();
+  	all_games = snapshot.val();
   	//console.log(games_tmp)
-  	displayGames(games_tmp);
+  	document.getElementById("random").max = Object.keys(all_games).length;
+  	displayGames(all_games);
   //findUserByTestId();
 
 });
@@ -143,7 +146,11 @@ function displayGames(games){
 		add_game_btn.classList.add("display_inline");
 		add_game_btn.classList.add("add_game_btn");
 		game_name.innerHTML = games[i].name;
-		game_name.href = games[i].name+".html";
+
+		game_name.setAttribute("onclick","openPreview(this.innerHTML)");
+
+
+
 		game_name.target="_blank";
 
 		add_game_btn.setAttribute("onclick","addGameToTest(this)");
@@ -164,7 +171,6 @@ function findUserByTestId(elem){
 
 	users_to_display = [];
 
-	console.log(elem);
 
 	var selected_li = document.getElementsByClassName("selected_li");
 	if(selected_li){
@@ -189,11 +195,10 @@ function findUserByTestId(elem){
 
 
 
-  	console.log(users_to_display);
+  	
 
   	users_to_display.sort(compareMax);
 
-  	console.log(users_to_display);
 
   	if(users_to_display.length>0){
   		displayShortResults(users_to_display);
@@ -327,7 +332,7 @@ function displayShortResults(user_results){
 							cell.innerHTML=user_answers[k][key];
 					else{
 
-						console.log("answer = " + user_answers[k][key]);
+						
 						if(user_answers[k][key]==false){
 							cell.className="wrong_anwser";
 						}
@@ -345,12 +350,18 @@ function displayShortResults(user_results){
 		}
 
 	}
+
+
+
 }
 
 
 function addGameToTest(elem){
 
-	var name = elem.parentNode.children[0].innerHTML;
+	if(typeof elem === "string")
+		var name = elem;
+	else
+		var name = elem.parentNode.children[0].innerHTML;
 
 	if(!isGameOnTest(name)){
 		current_games.push(name);
@@ -392,6 +403,49 @@ function deleteGameFromTest(elem){
 }
 
 
+function generateRandomTest(length){
+
+
+	if(length && length>0){
+		var random_games = [];
+		
+		if(length>Object.keys(all_games).length){
+			length =Object.keys(all_games).length;
+			document.getElementById("random").value=length;
+		}
+
+		while(random_games.length<length){
+
+			var index = Math.floor((Math.random() * Object.keys(all_games).length));
+			var name = all_games[Object.keys(all_games)[index]].name;
+			var is_in = false;
+
+			for(var i =0;i<random_games.length;i++){
+				if(random_games[i]==name){
+					is_in = true;
+					break;
+				}
+			}
+
+			if(!is_in){
+				random_games.push(name);
+			}
+		}
+
+		current_games = [];
+		document.getElementById("current_games").innerHTML="";
+		
+		for(var i=0;i<random_games.length;i++){
+			addGameToTest(random_games[i]);
+		}
+	}else {
+		document.getElementById("random").style.border = "2px solid red";
+
+		setTimeout("document.getElementById('random').style.border = '';",500);
+	}
+
+}
+
 function createNewTestObject(test_name){
 
 
@@ -413,6 +467,14 @@ function createNewTestObject(test_name){
 		setTimeout("document.getElementById('new_test_name').style.border = '';",500);
 
 	}
+}
+
+
+function openPreview(name){
+	is_preview_open=true;
+	document.getElementById("preview_div").style.display  = "";
+	document.getElementById("preview_frame").src = name+".html";
+
 }
 
 
@@ -460,7 +522,7 @@ function isGameOnTest(name){
 	}
 	return isOn;
 }
-	
+
 
 function getTimeString(value){
 	var hours   = checkTime(Math.floor(value / 3600) % 24)
@@ -475,6 +537,8 @@ function checkTime(value){
 }
 
 function clearName(){
+
+	
 	document.getElementById("new_test_name").value ="";
 }
 
@@ -520,6 +584,7 @@ function loadResults(){
 	document.getElementById("new_test_page").style.display="none";
 	document.getElementById("home_page").style.display = "none";
 	document.getElementById("results_page").style.display="";
+
 }
 
 function loadCreator(){
@@ -528,4 +593,18 @@ function loadCreator(){
 	document.getElementById("new_test_page").style.display="";
 	document.getElementById("home_page").style.display = "none";
 	document.getElementById("results_page").style.display="none";
+	
 }
+
+function hidePreview()
+{
+	
+	/*if(is_preview_open){
+		console.log("BOOOODYYY");
+		is_preview_open = false;
+		document.getElementById("preview_div").style.display  = "none";
+	}*/
+
+
+}
+

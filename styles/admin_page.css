@@ -557,6 +557,24 @@ h3{
 }
 
 
+#preview_div {
+
+	width: 800px;
+	height: 400px;
+	background-color: #ccc;
+	padding: 20px;
+	left: 50%;
+	top:150px;
+	margin-left: -400px;
+	position: absolute; 
+
+}
+
+#preview_frame {
+	width: 100%;
+	height: 100%;
+	border:none;
+}
 
 #save_test_btn{
 	display: block;
@@ -572,3 +590,31 @@ h3{
 	box-sizing: border-box;
 }
 
+
+.random_creator{
+	margin-bottom: 5px;
+}
+
+
+.random_creator input{
+	border:none;
+	outline: 0;
+	padding:8px 5px;
+	border:2px solid #ccc;
+	color:#7c7c7c;
+	border-radius: 5px;
+	font-weight: bold;
+	font-family: 'Arimo', sans-serif;
+	width: 30%;
+}
+
+.random_creator a {
+	padding: 8px 5px;
+	color:white;
+	background-color:  #2fe868;
+	border-radius: 5px;
+	text-decoration: none;
+	cursor: pointer;
+	font-weight: bold;
+	font-family: 'Arimo', sans-serif;
+}

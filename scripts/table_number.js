@@ -34,6 +34,6 @@ function checkAnswer(){
 
 function passQuestion(){
 	parent.PassQuestion(false,tries);
-	var anchor = getElementsByTagName("pass_btn");
+	var anchor = document.getElementsByTagName("pass_btn");
 	history.replaceState(null, null, anchor[0].href);
 }

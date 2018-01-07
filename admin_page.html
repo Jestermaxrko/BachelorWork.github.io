@@ -9,9 +9,9 @@
 
 </head>
 
-<body>
+<body onclick="hidePreview()">
 
-	<a href="#container" style="float: left; bottom: 0; position: fixed;">To Top</a>
+	<a href="#container" id="top_btn" style="float: left; bottom: 0; position: fixed;display: none;">To Top</a>
 
 
 	<div class="login_page" id="login_page" style="display: none;">
@@ -132,15 +132,13 @@
 			<div id=creator> 
 
 				<h3>Доступні ігри</h3>
-				<ul id="games_list">
-					
-				</ul>
+				<ul id="games_list"></ul>
 
-				<h3>Random create</h3>
-
-				<input type="number" name="">
-
-				<div id="result"> </div>
+				<div class="random_creator">
+					<h3>Автоматична генерація тесування</h3>
+					<input type="number" name="length" id=random placeholder="Кількість ігр" min="1" oninput="validity.valid||(value='');">
+					<a  onclick="generateRandomTest(random.value)">Генерувати</a>
+				</div>
 
 			</div>
 
@@ -151,7 +149,15 @@
 
 
 
+	<div id="preview_div" style="display: none;">
 
+		<iframe id="preview_frame" marginwidth="0"  >
+					
+
+		</iframe> 
+
+
+	</div>
 	
 
 </body>

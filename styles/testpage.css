@@ -257,7 +257,7 @@ a{
 
 iframe{
 	width: 100%;
-	height: 550px;
+	
 	padding: 0;
 	margin: 0;
 	line-height: 0;
@@ -328,3 +328,40 @@ td{
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+
+
+
+
+
+@media only screen and (max-width: 620px){
+
+
+	.right_panel {
+		display: none;
+		width: 100%;
+	}
+
+	.test_panel{
+		width: 100%;
+	}
+
+	.rules{
+		width: 100%;
+	}
+
+} 
+
+
+@media only screen and (max-width: 900px){
+
+
+	.rules{
+		width: 95%;
+	}
+
+
+	img{
+		display: none;
+	}
+} 
